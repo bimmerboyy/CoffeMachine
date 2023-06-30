@@ -1,0 +1,65 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="LoginDB.db" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="LoginDB.db" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.0.138" />
+    <PackageReference Include="Microsoft.TeamFoundationServer.Client" Version="16.205.1" />
+    <PackageReference Include="Prism.Core" Version="8.1.97" />
+    <PackageReference Include="System.Data.SQLite.Core" Version="1.0.118" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\background for coffe shop.jpg" />
+    <Resource Include="Images\Background.png" />
+    <Resource Include="Images\cappuccino.png" />
+    <Resource Include="Images\coffe for login.png" />
+    <Resource Include="Images\coffe machine.png" />
+    <Resource Include="Images\coffe shop.png" />
+    <Resource Include="Images\espresso in cup.png" />
+    <Resource Include="Images\espresso with milk.png" />
+    <Resource Include="Images\hot chocolate.png" />
+    <Resource Include="Images\irish coffe.png" />
+    <Resource Include="Images\kartice.png" />
+    <Resource Include="Images\kes.jpg" />
+    <Resource Include="Images\letnja ponuda ice coffe.png" />
+    <Resource Include="Images\letnja ponuda orange juice.png" />
+    <Resource Include="Images\leto.png" />
+    <Resource Include="Images\machiato in cup.png" />
+    <Resource Include="Images\nescafe.png" />
+    <Resource Include="Images\turkish coffe.png" />
+    <Resource Include="Images\welcome to coffe shop.png" />
+    <Resource Include="Images\zima.png" />
+    <Resource Include="Images\zimska ponuda tea.png" />
+    <Resource Include="Images\zimska ponuda turish tea 2.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="DataSet1.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="DataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,32 @@
+﻿<Window x:Class="CoffeMachine.Placanje"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CoffeMachine"
+        mc:Ignorable="d"
+        Title="Placanje" Height="150" Width="600" WindowStyle="None">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="lbCena" Height="100"/>
+        <StackPanel VerticalAlignment="Center">
+            <Button x:Name="btnKes" Content="KEŠ" Click="btnKes_Click" Width="100" Height="30" FontSize="18" FontWeight="Bold" Background="AliceBlue" Margin="0 0 0 20"/>
+            <Image Source="C:\Users\PC\source\repos\CoffeMachine\Images\kes.jpg"  Height="30"/>
+        </StackPanel>
+        <StackPanel Grid.Column="1" VerticalAlignment="Center">
+            <Button x:Name="btnKartica" Content="KARTICA" Click="btnKartica_Click" Width="100" Height="30" FontSize="18" FontWeight="Bold" Background="AliceBlue" Margin="0 0 0 20"/>
+            <Image Source="C:\Users\PC\source\repos\CoffeMachine\Images\kartice.png"/>
+        </StackPanel>
+        <StackPanel Grid.Column="2" VerticalAlignment="Center">
+            <Button x:Name="btnMobilnoPlacanje" Content="Mobilno Placanje"  Width="150" Height="30" FontSize="18" FontWeight="Bold" Background="AliceBlue" Margin="0 20 0 10" Click="btnMobilnoPlacanje_Click"/>
+            <Image Source="C:\Users\PC\source\repos\CoffeMachine\Images\mobile pay.png" Height="50"/>
+        </StackPanel>
+        
+       
+
+    </Grid>
+</Window>

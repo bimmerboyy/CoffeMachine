@@ -1,0 +1,176 @@
+﻿<Window x:Class="CoffeMachine.PlaceOrder"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CoffeMachine"
+        mc:Ignorable="d"
+        Title="PlaceOrder" Height="600"  Width="1020" WindowStyle="None">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="C:\Users\PC\source\repos\CoffeMachine\Images\Background.png"/>
+        </Grid.Background>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition  Width="0.3*"/>
+            <ColumnDefinition Width="0.7*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Image Source="C:\Users\PC\source\repos\CoffeMachine\Images\coffe machine.png" Height="200" Grid.Row="1"/>
+            <Label Content="Velicina šolje"  FontSize="20" Foreground="#FFFEF5E4" Margin="87 15 0 0"/>
+            <ComboBox Background="#FFFEF5E4" SelectionChanged="cbVelicina_SelectionChanged" x:Name="cbVelicina" Foreground="#FF4C1413" Height="30" Width="120" FontSize="20" Margin="0 0 0 100" />
+
+            <StackPanel Margin="0 50 0 0" Height="40" Orientation="Horizontal">
+                <Label Content="Mleko" Foreground="#FFFEF5E4" FontSize="20" Margin="20 0 0 0"/>
+                <Label Content="Šećer" Foreground="#FFFEF5E4" FontSize="20" Margin="70 0 0 0"/>
+            </StackPanel>
+            <StackPanel Height="100" Margin="0 120 0 0" Orientation="Horizontal" VerticalAlignment="Center">
+                <Button x:Name="btnMlekoPlus" Click="btnMlekoPlus_Click" Content="+" Height="30" Width="30" FontSize="20" FontWeight="Bold" Background="#FFFEF5E4" Margin="10 0 0 0"/>
+                <Button x:Name="brMleka" Content="0" Height="30" Width="30" FontSize="20" FontWeight="Bold" Background="#FFFEF5E4" />
+                <Button x:Name="btnMlekoMinus" Click="btnMlekoMinus_Click" Content="-" Height="30" Width="30" FontSize="20" FontWeight="Bold" Background="#FFFEF5E4" />
+
+                <Button x:Name="btnSecerPlus" Click="btnSecerPlus_Click" Content="+" Height="30" Width="30" FontSize="20" FontWeight="Bold" Background="#FFFEF5E4" Margin="40 0 0 0"/>
+                <Button x:Name="brSecera" Content="0" Height="30" Width="30" FontSize="20" FontWeight="Bold" Background="#FFFEF5E4" />
+                <Button x:Name="btnSecerMinus" Click="btnSecerMinus_Click" Content="-" Height="30" Width="30" FontSize="20" FontWeight="Bold" Background="#FFFEF5E4" />
+
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Column="1" Height="450" Width="700" Margin="0 0 0 0" Background="#FFFEF5E4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+           
+            <StackPanel Grid.Row="0" Grid.Column="0" x:Name="makijatoStackPanel" Tag="1">
+                <!--<Label Content="Makijato" FontSize="20" HorizontalContentAlignment="Center" Foreground="#FF4C1413" FontWeight="Bold"/>
+                <Image x:Name="imgMakijato" Height="100" Width="100" Source="/tea in cup.png">
+                    <Image.OpacityMask>
+                        <ImageBrush ImageSource="/machiato in cup.png"/>
+                    </Image.OpacityMask>
+                </Image>
+                <StackPanel Height="30" Orientation="Horizontal">
+                    <Label Content="Cena:" Width="56" FontSize="18" FontWeight="Bold" Foreground="#FF4C1413" Margin="30 0 0 0"/>
+                    <Label Content="40" x:Name="cenaMakijato" FontSize="18" FontWeight="Bold" Foreground="#FF4C1413" Width="30" Margin="0 0 0 0"/>
+                    <Label Content="din" FontSize="18" FontWeight="Bold" Foreground="#FF4C1413" Width="40" Margin="0 0 0 0"/>
+                </StackPanel>
+               
+                <Button x:Name="btnMakijato" Content="Naruči" Click="Button_Click" Margin="0 7 0 0" Height="30" Width="100" Background="#FF4C1413" Foreground="#FFFEF5E4" FontSize="18" FontWeight="Bold"/>-->
+
+            </StackPanel>
+
+        
+            <StackPanel Grid.Row="0" Grid.Column="1" x:Name="espresoStackPanel" Tag="2">
+                <!--<Label Content="Espreso" FontSize="20" HorizontalContentAlignment="Center" Foreground="#FF4C1413" FontWeight="Bold"/>
+                <Image Height="100" Width="100" Source="/espresso in cup.png"/>
+                <StackPanel Height="30" Orientation="Horizontal">
+                    <Label Content="Cena:" Width="56" FontSize="18" FontWeight="Bold" Foreground="#FF4C1413" Margin="30 0 0 0"/>
+                    <Label Content="30" x:Name="cenaEspreso" FontSize="18" FontWeight="Bold" Foreground="#FF4C1413" Width="30" Margin="0 0 0 0"/>
+                    <Label Content="din" FontSize="18" FontWeight="Bold" Foreground="#FF4C1413" Width="40" Margin="0 0 0 0"/>
+                </StackPanel>
+                <Button  x:Name="btnEspreso" Content="Naruči" Margin="0 7 0 0" Click="Button_Click_1" Height="30" Width="100" Background="#FF4C1413" Foreground="#FFFEF5E4" FontSize="18" FontWeight="Bold"/>-->
+
+            </StackPanel>
+
+
+            <StackPanel Grid.Row="0" Grid.Column="2" x:Name="espresoSaMlekomStackPanel" Tag="3">
+                <!--<Label Content="Espreso sa mlekom" FontSize="18" HorizontalContentAlignment="Center" Foreground="#FF4C1413" FontWeight="Bold"/>
+                <Image  Height="100" Width="100" Source="/espresso with milk.png"/>
+                <StackPanel Height="30" Orientation="Horizontal">
+                    <Label Content="Cena:" Width="56" FontSize="18" FontWeight="Bold" Foreground="#FF4C1413" Margin="30 0 0 0"/>
+                    <Label Content="40" x:Name="cenaEspresoMleko" FontSize="18" FontWeight="Bold" Foreground="#FF4C1413" Width="30" Margin="0 0 0 0"/>
+                    <Label Content="din" FontSize="18" FontWeight="Bold" Foreground="#FF4C1413" Width="40" Margin="0 0 0 0"/>
+                </StackPanel>
+                <Button x:Name="btnEspresoSaMlekom" Content="Naruči" Click="Button_Click_2" Margin="0 7 0 0" Height="30" Width="100" Background="#FF4C1413" Foreground="#FFFEF5E4" FontSize="18" FontWeight="Bold"/>-->
+
+            </StackPanel>
+
+
+            <StackPanel Grid.Row="0" Grid.Column="3" x:Name="kapucinoStackPanel" Tag="4">
+                <!--<Label Content="Kapućino" FontSize="20" HorizontalContentAlignment="Center" Foreground="#FF4C1413" FontWeight="Bold"/>
+                <Image  Height="100" Width="100" Source="/cappuccino.png"/>
+                <StackPanel Height="30" Orientation="Horizontal">
+                    <Label Content="Cena:" Width="56" FontSize="18" FontWeight="Bold" Foreground="#FF4C1413" Margin="30 0 0 0"/>
+                    <Label Content="50" x:Name="cenaKapucino" FontSize="18" FontWeight="Bold" Foreground="#FF4C1413" Width="30" Margin="0 0 0 0"/>
+                    <Label Content="din" FontSize="18" FontWeight="Bold" Foreground="#FF4C1413" Width="40" Margin="0 0 0 0"/>
+                </StackPanel>
+                <Button x:Name="btnKapucino" Content="Naruči" Click="Button_Click_3" Margin="0 7 0 0" Height="30" Width="100" Background="#FF4C1413" Foreground="#FFFEF5E4" FontSize="18" FontWeight="Bold"/>-->
+
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" Grid.Column="0" x:Name="toplaCokoladaStackPanel" Tag="5">
+                <!--<Label Content="Topla čokolada" FontSize="20" HorizontalContentAlignment="Center" Foreground="#FF4C1413" FontWeight="Bold"/>
+                <Image  Height="100" Width="100" Source="/hot chocolate.png"/>
+                <StackPanel Height="30" Orientation="Horizontal">
+                    <Label Content="Cena:" Width="56" FontSize="18" FontWeight="Bold" Foreground="#FF4C1413" Margin="30 0 0 0"/>
+                    <Label Content="50" x:Name="cenaToplaCokolada" FontSize="18" FontWeight="Bold" Foreground="#FF4C1413" Width="30" Margin="0 0 0 0"/>
+                    <Label Content="din" FontSize="18" FontWeight="Bold" Foreground="#FF4C1413" Width="40" Margin="0 0 0 0"/>
+                </StackPanel>
+                <Button x:Name="btnToplaCokolada" Content="Naruči" Click="Button_Click_4" Margin="0 7 0 0" Height="30" Width="100" Background="#FF4C1413" Foreground="#FFFEF5E4" FontSize="18" FontWeight="Bold"/>-->
+
+            </StackPanel>
+
+            <StackPanel Grid.Row="1" Grid.Column="1" x:Name="irskiKapucinoStackPanel" Tag="6">
+                <!--<Label Content="Irski kapućino" FontSize="20" HorizontalContentAlignment="Center" Foreground="#FF4C1413" FontWeight="Bold"/>
+                <Image  Height="100" Width="100" Source="/irish coffe.png"/>
+                <StackPanel Height="30" Orientation="Horizontal">
+                    <Label Content="Cena:" Width="56" FontSize="18" FontWeight="Bold" Foreground="#FF4C1413" Margin="30 0 0 0"/>
+                    <Label Content="50" x:Name="cenaIrskiKapucino" FontSize="18" FontWeight="Bold" Foreground="#FF4C1413" Width="30" Margin="0 0 0 0"/>
+                    <Label Content="din" FontSize="18" FontWeight="Bold" Foreground="#FF4C1413" Width="40" Margin="0 0 0 0"/>
+                </StackPanel>
+                <Button x:Name="btnIrskiKapucino" Content="Naruči" Click="Button_Click_5" Margin="0 7 0 0" Height="30" Width="100" Background="#FF4C1413" Foreground="#FFFEF5E4" FontSize="18" FontWeight="Bold"/>-->
+
+            </StackPanel>
+            <StackPanel Grid.Row="1" Grid.Column="2" x:Name="turksaKafaStackPanel" Tag="7">
+                <!--<Label Content="Turska kafa" FontSize="20" HorizontalContentAlignment="Center" Foreground="#FF4C1413" FontWeight="Bold"/>
+                <Image  Height="100" Width="100" Source="/turkish coffe.png"/>
+                <StackPanel Height="30" Orientation="Horizontal">
+                    <Label Content="Cena:" Width="56" FontSize="18" FontWeight="Bold" Foreground="#FF4C1413" Margin="30 0 0 0"/>
+                    <Label Content="40" x:Name="cenaTurskaKafa" FontSize="18" FontWeight="Bold" Foreground="#FF4C1413" Width="30" Margin="0 0 0 0"/>
+                    <Label Content="din" FontSize="18" FontWeight="Bold" Foreground="#FF4C1413" Width="40" Margin="0 0 0 0"/>
+                </StackPanel>
+                <Button x:Name="btnTurskaKafa" Content="Naruči" Click="Button_Click_6" Margin="0 7 0 0" Height="30" Width="100" Background="#FF4C1413" Foreground="#FFFEF5E4" FontSize="18" FontWeight="Bold"/>-->
+
+            </StackPanel>
+            <StackPanel Grid.Row="1" Grid.Column="3" x:Name="nescafeStackPanel" Tag="8">
+                <!--<Label Content="Nescafe" FontSize="20" HorizontalContentAlignment="Center" Foreground="#FF4C1413" FontWeight="Bold"/>
+                <Image  Height="100" Width="100" Source="/nescafe.png"/>
+                <StackPanel Height="30" Orientation="Horizontal">
+                    <Label Content="Cena:" Width="56" FontSize="18" FontWeight="Bold" Foreground="#FF4C1413" Margin="30 0 0 0"/>
+                    <Label Content="30" x:Name="cenaNescafe" FontSize="18" FontWeight="Bold" Foreground="#FF4C1413" Width="30" Margin="0 0 0 0"/>
+                    <Label Content="din" FontSize="18" FontWeight="Bold" Foreground="#FF4C1413" Width="40" Margin="0 0 0 0"/>
+                </StackPanel>
+                <Button x:Name="btnNescafe" Content="Naruči" Click="Button_Click_7" Margin="0 7 0 0" Height="30" Width="100" Background="#FF4C1413" Foreground="#FFFEF5E4" FontSize="18" FontWeight="Bold"/>-->
+
+            </StackPanel>
+        </Grid>
+        <StackPanel Orientation="Horizontal" Margin="0 400 0 0" Grid.Column="1" x:Name="bottomPartStackPanel">
+             <Label Content="UKUPAN IZNOS:" x:Name="ukupanIznos" Foreground="#FFFEF5E4" FontSize="20" Margin="0 135 0 0"/>
+            <TextBox Width="100" Height="30" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="18" x:Name="konacnaCena" Margin="20 110 0 0"/>
+            <Label Content="din" Foreground="#FFFEF5E4" x:Name="dinLabel" FontSize="18" Margin="0 135 0 0"/>
+            <!--<Button Content="PLATI" x:Name="btnPlati" Click="btnPlati_Click" Margin="70 110 0 0" Height="30" Width="100" FontSize="20"  Background="#FFFEF5E4" FontFamily="Segoe UI Black" FontWeight="Bold"/>-->
+            <!--<Button Content="IZMENI" x:Name="izmeni" Click="izmeni_Click" Visibility="Visible" Margin="50 110 0 0" Height="30" Width="100" FontSize="20"  Background="#FFFEF5E4" FontFamily="Segoe UI Black" FontWeight="Bold"/>-->
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" Margin="0 565 0 0" Height="30" x:Name="cbPart">
+            
+        </StackPanel>
+
+        <StackPanel x:Name="meniStackPanel" Grid.Column="1" Height="40" HorizontalAlignment="Center" Margin="0 0 0 520">
+            <!--<Label Content="STANDARDNI MENI" Foreground="#FFFEF5E4" FontSize="30"/>-->
+        </StackPanel>
+
+
+    </Grid>
+</Window>
